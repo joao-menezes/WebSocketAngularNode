@@ -1,0 +1,14 @@
+<p-toast></p-toast>
+<div *ngIf="!settedName">
+  <div class="container">
+    <div class="content">
+      <div class="set-name"></div>
+      <input #userNameInput placeholder="Set your username" type="text">
+      <input type="button" value="Submit" (click)="goToChat(userNameInput.value)">
+    </div>
+  </div>
+</div>
+
+<div *ngIf="settedName" class="chat-box">
+  <app-chat-box [userName]="userName"></app-chat-box>
+</div>
